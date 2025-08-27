@@ -15,7 +15,7 @@ jobs:
             - name: Checkout repository 
               uses: actions/checkout@v5
     build-and-test:
-        needs: [run hello world]
+        needs: [build]
         runs-on: ubuntu-latest
         steps: 
             - name: Compile Blink Sketch
