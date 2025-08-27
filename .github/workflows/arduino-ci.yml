@@ -18,6 +18,10 @@ jobs:
         needs: [build]
         runs-on: ubuntu-latest
         steps: 
+              # Install Arduino CLI
+            - name: Setup Arduino CLI
+              uses: arduino/setup-arduino-cli@v1
+            
             - name: Compile Blink Sketch
               run: |
                 arduino-cli compile --fqbn arduino:avr:uno ./Blink --verbose
