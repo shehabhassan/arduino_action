@@ -1,0 +1,14 @@
+name: Arduino CI
+
+on: [push]
+
+# jobs run in parallel
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        
+        steps:
+            #checkout repo
+            - name: Checkout repository 
+              uses: actions/checkout@v5
