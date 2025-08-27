@@ -14,3 +14,8 @@ jobs:
             #checkout repo
             - name: Checkout repository 
               uses: actions/checkout@v5
+            # compile Arduino sketch 
+            - name: compile Arduino Sketches
+              uses: arduino/compile-sketches@v1
+              with: 
+                fqbn: "arduino:avr:uno"
