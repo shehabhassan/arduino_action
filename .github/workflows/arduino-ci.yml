@@ -19,3 +19,5 @@ jobs:
               uses: arduino/compile-sketches@v1
               with: 
                 fqbn: "arduino:avr:uno"
+                sketch-paths: |
+                    ./Blink # path to your sketch folder 
