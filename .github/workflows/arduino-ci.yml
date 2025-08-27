@@ -14,12 +14,17 @@ jobs:
             #checkout repo
             - name: Checkout repository 
               uses: actions/checkout@v5
+    arduino-and-compile:
+            - name: Compile Blink Sketch
+              run: |
+                arduino-cli compile --fqbn arduino:avr:uno ./Blink --verbose
+
             # compile Arduino sketch 
-            - name: compile Arduino Sketches
-              uses: arduino/compile-sketches@v1
-              with: 
-                fqbn: "arduino:avr:uno"
-                sketch-paths: |
-                    ./Blink 
+            #- name: compile Arduino Sketches
+            #  uses: arduino/compile-sketches@v1
+            #  with: 
+            #    fqbn: "arduino:avr:uno"
+            #    sketch-paths: |
+             #       ./Blink 
                     
             # path to your sketch folder 
