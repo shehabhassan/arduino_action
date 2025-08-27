@@ -28,7 +28,9 @@ jobs:
                 arduino-cli core install arduino:avr
                 
             - name: Compile Blink Sketch
+              working-directory: ${{ github.workspace }}
               run: |
+                ls -R
                 arduino-cli compile --fqbn arduino:avr:uno Blink --verbose
 
             # compile Arduino sketch 
