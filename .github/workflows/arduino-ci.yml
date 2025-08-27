@@ -9,6 +9,8 @@ jobs:
         runs-on: ubuntu-latest
         
         steps:
+            - name: run hello world
+              run: echo "say hello to everyone"  
             #checkout repo
             - name: Checkout repository 
               uses: actions/checkout@v5
