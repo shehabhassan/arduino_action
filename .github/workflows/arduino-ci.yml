@@ -21,7 +21,12 @@ jobs:
               # Install Arduino CLI
             - name: Setup Arduino CLI
               uses: arduino/setup-arduino-cli@v1
-            
+            # Install board core
+            - name: Install Arduino AVR Core
+              run: |
+                arduino-cli core update-index
+                arduino-cli core install arduino:avr
+                
             - name: Compile Blink Sketch
               run: |
                 arduino-cli compile --fqbn arduino:avr:uno ./Blink --verbose
