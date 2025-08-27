@@ -20,4 +20,6 @@ jobs:
               with: 
                 fqbn: "arduino:avr:uno"
                 sketch-paths: |
-                    ./Blink # path to your sketch folder 
+                    ./Blink 
+                    
+            # path to your sketch folder 
