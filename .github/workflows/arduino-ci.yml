@@ -18,6 +18,9 @@ jobs:
         needs: [build]
         runs-on: ubuntu-latest
         steps: 
+            #checkout repo
+            - name: Checkout repository 
+              uses: actions/checkout@v5
               # Install Arduino CLI
             - name: Setup Arduino CLI
               uses: arduino/setup-arduino-cli@v1
@@ -26,8 +29,9 @@ jobs:
               run: |
                 arduino-cli core update-index
                 arduino-cli core install arduino:avr
+                
             - name: list all files
-              run: ls -R ${{ github.workspace }}  
+              run: ls  
               
             - name: Compile Blink Sketch
               #working-directory: ${{ github.workspace }}
