@@ -13,14 +13,15 @@ jobs:
               run: echo "say hello to everyone"  
             #checkout repo
             - name: Checkout repository 
-              uses: actions/checkout@v5
+              uses: actions/checkout@v4
     build-and-test:
         needs: [build]
         runs-on: ubuntu-latest
         steps: 
             #checkout repo
             - name: Checkout repository 
-              uses: actions/checkout@v5
+              uses: actions/checkout@v4
+              
               # Install Arduino CLI
             - name: Setup Arduino CLI
               uses: arduino/setup-arduino-cli@v1
@@ -28,15 +29,12 @@ jobs:
             - name: Install Arduino AVR Core
               run: |
                 arduino-cli core update-index
-                arduino-cli core install arduino:avr
-                
-            - name: list all files
-              run: ls  
+                arduino-cli core install arduino:avr      
               
             - name: Compile Blink Sketch
               #working-directory: ${{ github.workspace }}
               run: |
-              #ls -R
+                ls -R
                 arduino-cli compile --fqbn arduino:avr:uno Blink --verbose
 
             # compile Arduino sketch 
